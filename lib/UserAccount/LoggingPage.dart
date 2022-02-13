@@ -1,6 +1,8 @@
 
 
+import 'package:aoun/TransilatClass/getTranselaitData.dart';
 import 'package:aoun/Widget/Colors.dart';
+import 'package:aoun/Widget/Controller.dart';
 import 'package:aoun/Widget/Icons.dart';
 import 'package:aoun/Widget/widget.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +32,7 @@ class _LoggingPageState extends State<LoggingPage> {
                 children: [
                   SizedBox(height: 80.h,),
                   
-                  drowText(context, "تسجيل الدخول", 18,color: white),
+                  drowText(context, translatedData(context, 'sing'), 18,color: white),
                    SizedBox(height: 20.h),
                   drowContiner(700, double.infinity, 0, 0,white, 
                   

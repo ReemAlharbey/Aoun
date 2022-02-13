@@ -14,11 +14,3 @@ Icon noIcon=Icon(Icons.add,size: 0);
 Icon showPassIcon=Icon(Icons.remove_red_eye);
 Icon hiddPassIcon=Icon(Icons.visibility_off_sharp);
 
-
-//TextEditingController-------------------------------------------------------
-TextEditingController  nameController = TextEditingController();
-TextEditingController emailController = TextEditingController();
-TextEditingController passController = TextEditingController();
-TextEditingController levelController = TextEditingController();
-TextEditingController collegController = TextEditingController();
-TextEditingController phoneController = TextEditingController();

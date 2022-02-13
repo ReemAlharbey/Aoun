@@ -1,3 +1,5 @@
+import 'package:aoun/SelectLangugePage/SelectLangModel.dart';
+import 'package:aoun/TransilatClass/language.dart';
 import 'package:aoun/Widget/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,6 +56,44 @@ Widget drowContiner(double height, double width, double marginL, double marginR,
     child: child,
   );
 }
+
+//===============================drow continer with image===============================
+Widget drowContinerImage(double height, double width,String image ,double marginL, double marginR,
+    Color color, Widget child,
+    {double blur = 0.0,
+    Offset offset = Offset.zero,
+    double spShadow = 0.0,
+    double pL = 0.0,
+    double pR = 0.0,
+    double pT = 0.0,
+    double pB = 0.0,
+    double marginT = 0.0,
+    double marginB = 0.0,
+    double bottomLeft = 0.0,
+    double topRight = 0.0,
+    double topLeft = 0.0,
+    double bottomRight = 0.0}) {
+  return Container(
+    padding: EdgeInsets.only(left: pL.w, right: pR.w, top: pT.h, bottom: pB.h),
+    width: width.w,
+    height: height.h,
+    margin: EdgeInsets.only(
+        left: marginL.w, right: marginR.w, top: marginT.h, bottom: marginB.h),
+    decoration: BoxDecoration(
+      image: DecorationImage(image: AssetImage(image)),
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(bottomLeft),
+            topRight: Radius.circular(topRight),
+            topLeft: Radius.circular(topLeft),
+            bottomRight: Radius.circular(bottomRight)),
+        color: color,
+        boxShadow: [
+          BoxShadow(blurRadius: blur, offset: offset, spreadRadius: spShadow)
+        ]),
+    child: child,
+  );
+}
+
 
 //=================================Drow Buttoms=============================
 Widget drowButtoms(context, String key, double fontSize, Color textColor, onPressed,
@@ -124,6 +164,34 @@ Widget drowTextField(
         prefixIcon: Icon(icons, color: deepGreen, size: 25.sp),
         hintText: key,
         contentPadding: EdgeInsets.all(10.h)),
+  );
+}
+
+//===========================DropMenu Buttom==============================
+Widget selectLangButtom(context,{ IconData icon}) {
+  return DropdownButton(
+    elevation: 20,
+    dropdownColor: gray,
+    underline: SizedBox(),
+    iconSize: 35.sp,
+    
+    icon: Icon(icon, color: black),
+    
+    items: Language.languageList()
+        .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
+              value: lang,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  
+                  Text(lang.name)
+                ],
+              ),
+            ))
+        .toList(),
+    onChanged: (Language lang) {
+      newLang(lang, context);
+    },
   );
 }
 

@@ -32,7 +32,7 @@ class _LoggingPageState extends State<LoggingPage> {
                 children: [
                   SizedBox(height: 80.h,),
                   
-                  drowText(context, translatedData(context, 'sing'), 18,color: white),
+                  drowText(context,'تسجيل الدخول', 18,color: white),
                    SizedBox(height: 20.h),
                   drowContiner(700, double.infinity, 0, 0,white, 
                   

@@ -2,10 +2,9 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'SelectLangugePage/SelestLangView.dart';
 import 'TransilatClass/getTranselaitData.dart';
 import 'TransilatClass/setLocale.dart';
-import 'UserAccount/LoggingPage.dart';
+import 'Welcom page/frontend.dart';
 
 
 void main() => runApp(
@@ -98,7 +97,7 @@ class _MyAppState extends State<MyApp> {
         //اظهار الشاشه الولي وفقا لحاله المستخدم, هل قام بالتسجيل مسلقا ام اول مره يظهر التطبيق
         home:
        // _local == null ?
-       SelectLangView()
+       WelcomePage()
          // :
          //WorkerNavHome(),
       ),

@@ -1,23 +1,28 @@
-import 'package:aoun/SelectLangugePage/SelectLangModel.dart';
 import 'package:aoun/TransilatClass/language.dart';
+import 'package:aoun/Welcom%20page/backend.dart';
 import 'package:aoun/Widget/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget drowText(context,String text,double fontSize, {family = "Cairo",Color color=Colors.white,
-  align = TextAlign.right,
+Widget drowText(
+  context,
+  String text,
+  double fontSize, {
+  family = "Cairo",
+  Color color = Colors.white,
+  align,
   double space = 0,
   FontWeight fontWeight = FontWeight.normal,
 }) {
   return Text(
     text,
     style: TextStyle(
-          color: color,
-          fontFamily: family,
-          fontSize: fontSize.sp,
-          letterSpacing: space.sp,
-          fontWeight: fontWeight,
-        ),
+      color: color,
+      fontFamily: family,
+      fontSize: fontSize.sp,
+      letterSpacing: space.sp,
+      fontWeight: fontWeight,
+    ),
   );
 }
 
@@ -58,8 +63,8 @@ Widget drowContiner(double height, double width, double marginL, double marginR,
 }
 
 //===============================drow continer with image===============================
-Widget drowContinerImage(double height, double width,String image ,double marginL, double marginR,
-    Color color, Widget child,
+Widget drowContinerImage(double height, double width, String image,
+    double marginL, double marginR, Color color, Widget child,
     {double blur = 0.0,
     Offset offset = Offset.zero,
     double spShadow = 0.0,
@@ -72,6 +77,8 @@ Widget drowContinerImage(double height, double width,String image ,double margin
     double bottomLeft = 0.0,
     double topRight = 0.0,
     double topLeft = 0.0,
+    fit,
+    fillterColor,
     double bottomRight = 0.0}) {
   return Container(
     padding: EdgeInsets.only(left: pL.w, right: pR.w, top: pT.h, bottom: pB.h),
@@ -80,7 +87,10 @@ Widget drowContinerImage(double height, double width,String image ,double margin
     margin: EdgeInsets.only(
         left: marginL.w, right: marginR.w, top: marginT.h, bottom: marginB.h),
     decoration: BoxDecoration(
-      image: DecorationImage(image: AssetImage(image)),
+        image: DecorationImage(
+            image: AssetImage(image),
+            fit: fit,
+            colorFilter: ColorFilter.mode(fillterColor, BlendMode.darken)),
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(bottomLeft),
             topRight: Radius.circular(topRight),
@@ -94,9 +104,9 @@ Widget drowContinerImage(double height, double width,String image ,double margin
   );
 }
 
-
 //=================================Drow Buttoms=============================
-Widget drowButtoms(context, String key, double fontSize, Color textColor, onPressed,
+Widget drowButtoms(
+    context, String key, double fontSize, Color textColor, onPressed,
     {Color backgrounColor = Colors.transparent,
     double horizontal = 0.0,
     double vertical = 0.0,
@@ -105,16 +115,13 @@ Widget drowButtoms(context, String key, double fontSize, Color textColor, onPres
     height: 45.h,
     child: TextButton(
       onPressed: onPressed,
-      child: drowText(context, key, fontSize,
-      color: textColor
-      ),
+      child: drowText(context, key, fontSize, color: textColor),
       style: ButtonStyle(
-        
         elevation: MaterialStateProperty.all(evaluation),
         backgroundColor: MaterialStateProperty.all(backgrounColor),
         foregroundColor: MaterialStateProperty.all(textColor),
-        padding: MaterialStateProperty.all(
-            EdgeInsets.symmetric(horizontal: horizontal.w, vertical: vertical.h)),
+        padding: MaterialStateProperty.all(EdgeInsets.symmetric(
+            horizontal: horizontal.w, vertical: vertical.h)),
       ),
     ),
   );
@@ -127,9 +134,9 @@ goTopagepush(context, pageName) {
 
 //===============================Go To page(pushReplacement)===============================
 goTopageReplacement(context, pageName) {
-  return Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => pageName));
+  return Navigator.pushReplacement(
+      context, MaterialPageRoute(builder: (_) => pageName));
 }
-
 
 //get heghit and width===============================================================
 Size getSize(context) {
@@ -138,15 +145,15 @@ Size getSize(context) {
 
 //=============================Drow TextFields=================================
 Widget drowTextField(
-  context,
-  icons,
-  String key,
-  //double fontSize,
-  bool hintPass,
-  TextEditingController mycontroller,
-  myvali,
-  {Widget suffixIcon,void Function() onTap}
-) {
+    context,
+    icons,
+    String key,
+    //double fontSize,
+    bool hintPass,
+    TextEditingController mycontroller,
+    myvali,
+    {Widget suffixIcon,
+    void Function() onTap}) {
   return TextFormField(
     obscureText: hintPass,
     validator: myvali,
@@ -156,8 +163,8 @@ Widget drowTextField(
     decoration: InputDecoration(
         isDense: true,
         filled: true,
-        suffixIcon:suffixIcon,
-        hintStyle: TextStyle(color:deepGreen, fontSize: 12.sp),
+        suffixIcon: suffixIcon,
+        hintStyle: TextStyle(color: deepGreen, fontSize: 12.sp),
         fillColor: gray,
         labelStyle: TextStyle(color: deepGreen, fontSize: 12.sp),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
@@ -168,24 +175,27 @@ Widget drowTextField(
 }
 
 //===========================DropMenu Buttom==============================
-Widget selectLangButtom(context,{ IconData icon}) {
-  return DropdownButton(
+Widget langButtom(context, {IconData icon}) {
+  return DropdownButtonFormField(
     elevation: 20,
+    decoration: InputDecoration(
+        isDense: true,
+        filled: true,
+        hintStyle: TextStyle(color: white, fontSize: 15.sp, wordSpacing: 2),
+        fillColor: deepGreen,
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
+        prefixIcon: Icon(icon, color: deepGreen, size: 25.sp),
+        hintText: "اختار اللغة",
+        contentPadding: EdgeInsets.all(15.h)),
     dropdownColor: gray,
-    underline: SizedBox(),
-    iconSize: 35.sp,
-    
-    icon: Icon(icon, color: black),
-    
+    iconSize: 30.sp,
+    icon: Icon(icon, color: white),
     items: Language.languageList()
         .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
               value: lang,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  
-                  Text(lang.name)
-                ],
+                children: <Widget>[Text(lang.name)],
               ),
             ))
         .toList(),
@@ -194,6 +204,3 @@ Widget selectLangButtom(context,{ IconData icon}) {
     },
   );
 }
-
-
-

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Icons name-----------------------------------------
 IconData nameIcon=Icons.person;
 IconData passIcon=Icons.lock;
+IconData langIcon=Icons.translate_sharp;
 IconData emailIcon=Icons.email_rounded;
 IconData phoneIcon=Icons.call;
 IconData collegIcon=Icons.location_city_rounded;
@@ -13,4 +14,5 @@ IconData requstIcon=Icons.list_alt_outlined;
 Icon noIcon=Icon(Icons.add,size: 0);
 Icon showPassIcon=Icon(Icons.remove_red_eye);
 Icon hiddPassIcon=Icon(Icons.visibility_off_sharp);
+
 

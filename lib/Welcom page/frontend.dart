@@ -31,7 +31,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: SingleChildScrollView(
               child: Column(
               children: [
- //الشعار-------------------------------------------------           
+            
                 SizedBox(height: 50.h,),
                 CircleAvatar(
                   radius:60,
@@ -40,16 +40,15 @@ class _WelcomePageState extends State<WelcomePage> {
                   
                 ),
                 SizedBox(height: 30.h,),
-//نص الترحيب-------------------------------------------------           
+           
 
               drowText(context, "مرحبا بكم في تطبيق عون", 27, color: white),
               
-//نص الوصف-------------------------------------------------           
+          
 
                 SizedBox(height: 170.h,),
                
-// ازرار اللغه-------------------------------------------------           
-
+  
               SizedBox(
                 width: 200.w,
                 child: langButtom(context,icon: langIcon))

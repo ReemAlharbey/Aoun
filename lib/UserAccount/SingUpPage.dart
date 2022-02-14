@@ -57,7 +57,7 @@ class _SingUpPageState extends State<SingUpPage> {
                     ),
                   ),
                   topRight: 90,
-                  blur: 10,
+                  blur:10,
                   spShadow:3
                   )
                 ],

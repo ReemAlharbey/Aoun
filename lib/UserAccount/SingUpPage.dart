@@ -1,5 +1,6 @@
 // ignore: file_names
 
+import 'package:aoun/TransilatClass/getTranselaitData.dart';
 import 'package:aoun/Widget/Colors.dart';
 import 'package:aoun/Widget/Controller.dart';
 import 'package:aoun/Widget/Icons.dart';
@@ -19,7 +20,7 @@ class SingUpPage extends StatefulWidget {
 class _SingUpPageState extends State<SingUpPage> {
   @override
   Widget build(BuildContext context) {
-    return  Directionality(textDirection: TextDirection.rtl,child:(
+    return  (
       Scaffold(
         body: Container(
           color: deepGreen,
@@ -31,7 +32,7 @@ class _SingUpPageState extends State<SingUpPage> {
                 children: [
                   SizedBox(height: 80.h,),
                   
-                  drowText(context, "انشاء حساب", 18,color: white),
+                  drowText(context, translatedData(context, "Create an account"), 18,color: white),
                    SizedBox(height: 20.h),
                   drowContiner(700, double.infinity, 0, 0,white, 
                   
@@ -41,18 +42,18 @@ class _SingUpPageState extends State<SingUpPage> {
                        crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         // Image(image: AssetImage("assets/image/logo.png"),height: 150.h,width: 150.w),
-                        drowTextField(context, nameIcon, "اسم المستخدم",false, nameController, (val){}),
+                        drowTextField(context, nameIcon, translatedData(context, "user name"),false, nameController, (val){}),
                         SizedBox(height: 10.h),
-                        drowTextField(context, emailIcon, "البريد الالكتروني",false, emailController, (val){}),
+                        drowTextField(context, emailIcon,translatedData(context, "E-mail"),false, emailController, (val){}),
                         SizedBox(height: 10.h),
-                        drowTextField(context, passIcon, "كلمة المرور",true, passController, (val){}),
+                        drowTextField(context, passIcon, translatedData(context, "password"),true, passController, (val){}),
                         SizedBox(height: 10.h),
-                        drowTextField(context, iDIcon, "رقم الهوية / الاقامة",true, iDController, (val){}),
+                        drowTextField(context, iDIcon, translatedData(context, "Residence/ID number"),true, iDController, (val){}),
                         SizedBox(height: 10.h),
-                        drowTextField(context, phoneIcon, "رقم الجوال",false, phoneController, (val){}),
+                        drowTextField(context, phoneIcon, translatedData(context, "Mobile number"),false, phoneController, (val){}),
                         SizedBox(height: 10.h),
-                        drowButtoms(context, "انشاء حساب", 12, white, (){},backgrounColor:deepGreen),
-                        drowButtoms(context, "لديك حساب بالفعل؟ تسجيل الدخول", 12, deepGreen, (){
+                        drowButtoms(context,translatedData(context, "Create an account"), 12, white, (){},backgrounColor:deepGreen),
+                        drowButtoms(context,translatedData(context, "Already have an account?Login"), 12, deepGreen, (){
                           goTopageReplacement(context, LoggingPage());
                         },backgrounColor:white)
                         ],
@@ -67,7 +68,6 @@ class _SingUpPageState extends State<SingUpPage> {
             ),
           ),
         )
-   ) ),
-    );
+   ) );
   }
 }

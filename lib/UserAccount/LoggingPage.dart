@@ -20,7 +20,7 @@ class LoggingPage extends StatefulWidget {
 class _LoggingPageState extends State<LoggingPage> {
   @override
   Widget build(BuildContext context) {
-    return  Directionality(textDirection: TextDirection.rtl,child:(
+    return  (
       Scaffold(
         body: Container(
           color: deepGreen,
@@ -32,7 +32,7 @@ class _LoggingPageState extends State<LoggingPage> {
                 children: [
                   SizedBox(height: 80.h,),
                   
-                  drowText(context,'تسجيل الدخول', 18,color: white),
+                  drowText(context,translatedData(context, "sign in"), 18,color: white),
                    SizedBox(height: 20.h),
                   drowContiner(700, double.infinity, 0, 0,white, 
                   
@@ -42,13 +42,13 @@ class _LoggingPageState extends State<LoggingPage> {
                        crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         
-                        drowTextField(context, emailIcon, "البريد الالكتروني",false, emailController, (val){}),
+                        drowTextField(context, emailIcon,  translatedData(context, "E-mail"),false, emailController, (val){}),
                         SizedBox(height: 10.h),
-                        drowTextField(context, passIcon, "كلمة المرور",true, passController, (val){}),
+                        drowTextField(context, passIcon, translatedData(context, "password"),true, passController, (val){}),
                         SizedBox(height: 10.h),
                       
-                        drowButtoms(context, "تسجيل الدخول", 12, white, (){},backgrounColor:deepGreen),
-                        drowButtoms(context, "ليس لديك حساب بالفعل؟ انشاء حساب", 12, deepGreen, (){
+                        drowButtoms(context, translatedData(context, "sign in"), 12, white, (){},backgrounColor:deepGreen),
+                        drowButtoms(context, translatedData(context, "Don't have an account? Create an account"), 12, deepGreen, (){
                           goTopageReplacement(context, SingUpPage());
                         },backgrounColor:white)
                         ],
@@ -64,7 +64,6 @@ class _LoggingPageState extends State<LoggingPage> {
             ),
           ),
         )
-   ) ),
-    );
+   ) );
   }
 }

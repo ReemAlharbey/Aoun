@@ -1,3 +1,4 @@
+import 'package:aoun/TransilatClass/getTranselaitData.dart';
 import 'package:aoun/TransilatClass/language.dart';
 import 'package:aoun/Welcom%20page/backend.dart';
 import 'package:aoun/Widget/Colors.dart';
@@ -176,17 +177,10 @@ Widget drowTextField(
 
 //===========================DropMenu Buttom==============================
 Widget langButtom(context, {IconData icon}) {
-  return DropdownButtonFormField(
+  return DropdownButton(
     elevation: 20,
-    decoration: InputDecoration(
-        isDense: true,
-        filled: true,
-        hintStyle: TextStyle(color: white, fontSize: 15.sp, wordSpacing: 2),
-        fillColor: deepGreen,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
-        prefixIcon: Icon(icon, color: deepGreen, size: 25.sp),
-        hintText: "اختار اللغة",
-        contentPadding: EdgeInsets.all(15.h)),
+      underline: SizedBox(),
+    
     dropdownColor: gray,
     iconSize: 30.sp,
     icon: Icon(icon, color: white),

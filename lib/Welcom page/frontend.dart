@@ -1,5 +1,6 @@
 
 
+import 'package:aoun/TransilatClass/getTranselaitData.dart';
 import 'package:aoun/Widget/Colors.dart';
 import 'package:aoun/Widget/Icons.dart';
 import 'package:aoun/Widget/image.dart';
@@ -42,16 +43,14 @@ class _WelcomePageState extends State<WelcomePage> {
                 SizedBox(height: 30.h,),
            
 
-              drowText(context, "مرحبا بكم في تطبيق عون", 27, color: white),
+              drowText(context, translatedData(context, "welcome"), 27, color: white),
               
           
 
                 SizedBox(height: 170.h,),
                
   
-              SizedBox(
-                width: 200.w,
-                child: langButtom(context,icon: langIcon))
+              drowContiner(50, 200, 0, 0, deepGreen, langButtom(context,icon: langIcon))
               
               ],
               ),

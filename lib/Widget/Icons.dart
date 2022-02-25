@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Icons name-----------------------------------------
 IconData nameIcon=Icons.person;
 IconData passIcon=Icons.lock;
+IconData iDIcon=Icons.assignment_ind_rounded;
 IconData langIcon=Icons.translate_sharp;
 IconData emailIcon=Icons.email_rounded;
 IconData phoneIcon=Icons.call;

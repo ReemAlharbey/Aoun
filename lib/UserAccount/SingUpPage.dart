@@ -47,6 +47,8 @@ class _SingUpPageState extends State<SingUpPage> {
                         SizedBox(height: 10.h),
                         drowTextField(context, passIcon, "كلمة المرور",true, passController, (val){}),
                         SizedBox(height: 10.h),
+                        drowTextField(context, iDIcon, "رقم الهوية / الاقامة",true, iDController, (val){}),
+                        SizedBox(height: 10.h),
                         drowTextField(context, phoneIcon, "رقم الجوال",false, phoneController, (val){}),
                         SizedBox(height: 10.h),
                         drowButtoms(context, "انشاء حساب", 12, white, (){},backgrounColor:deepGreen),

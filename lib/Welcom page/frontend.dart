@@ -50,7 +50,12 @@ class _WelcomePageState extends State<WelcomePage> {
                 SizedBox(height: 170.h,),
                
   
-              drowContiner(50, 200, 0, 0, deepGreen, langButtom(context,icon: langIcon))
+              drowContiner(50, 200, 0, 0, deepGreen, Row(children: [
+                langButtom(context,icon: langIcon),
+                 SizedBox(width: 10.w,),
+                drowText(context,  translatedData(context, "choose the language"), 14),
+                
+              ],))
               
               ],
               ),

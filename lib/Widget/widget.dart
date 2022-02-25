@@ -182,7 +182,7 @@ Widget langButtom(context, {IconData icon}) {
       underline: SizedBox(),
     
     dropdownColor: gray,
-    iconSize: 30.sp,
+    iconSize: 20.sp,
     icon: Icon(icon, color: white),
     items: Language.languageList()
         .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(

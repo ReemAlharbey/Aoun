@@ -27,10 +27,10 @@ class _requestWheelcharState extends State<requestWheelchar> {
                 child: Column(
                 
                   children: [
-                    SizedBox(height: 80.h,),
+                    SizedBox(height: 60.h,),
                     
                     drowText(context, "طلب كرسي متحرك", 18,color: deepGreen),
-                     SizedBox(height: 10.h),
+                     
                     Padding(
                       padding:  EdgeInsets.only(left:20.w,right: 20.w,top:40.h),
                       child: Column(

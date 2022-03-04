@@ -179,8 +179,7 @@ Widget drowTextField(
 Widget langButtom(context, {IconData icon}) {
   return DropdownButton(
     elevation: 20,
-      underline: SizedBox(),
-    
+    underline: SizedBox(),
     dropdownColor: gray,
     iconSize: 20.sp,
     icon: Icon(icon, color: white),
@@ -196,5 +195,47 @@ Widget langButtom(context, {IconData icon}) {
     onChanged: (Language lang) {
       newLang(lang, context);
     },
+  );
+}
+
+// combo box============================================================abstract
+Widget drowMenu(String insiValue, IconData icon,List<String> item) {
+  return Container(
+    child: DropdownButtonFormField<String>(
+      // validator: validator,
+      //elevation: 20,
+
+      hint: Text(
+        "$insiValue",
+        style: TextStyle(
+          color: deepGreen,
+          fontSize: 13.sp,
+        ),
+      ),
+      dropdownColor: white,
+
+      items: item.map((type) => DropdownMenuItem(
+                //  alignment: Alignment.center,
+                value: type,
+                child: Text(
+                  type,
+                  style: TextStyle(
+                    color: deepGreen,
+                    fontSize: 13.sp,
+                  ),
+                ),
+              ))
+          .toList(),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(8.0),
+        prefixIcon: Icon(icon, color: deepGreen, size: 25),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      onChanged: (catogary) {
+        print(catogary);
+      },
+    ),
   );
 }

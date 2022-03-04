@@ -5,6 +5,7 @@ import 'package:aoun/Widget/Colors.dart';
 import 'package:aoun/Widget/Controller.dart';
 import 'package:aoun/Widget/Icons.dart';
 import 'package:aoun/Widget/widget.dart';
+import 'package:aoun/home/userHomePage/userHomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -47,7 +48,7 @@ class _LoggingPageState extends State<LoggingPage> {
                         drowTextField(context, passIcon, translatedData(context, "password"),true, passController, (val){}),
                         SizedBox(height: 10.h),
                       
-                        drowButtoms(context, translatedData(context, "sign in"), 12, white, (){},backgrounColor:deepGreen),
+                        drowButtoms(context, translatedData(context, "sign in"), 12, white, (){goTopageReplacement(context, userHomePage());},backgrounColor:deepGreen),
                         drowButtoms(context, translatedData(context, "Don't have an account? Create an account"), 12, deepGreen, (){
                           goTopageReplacement(context, SingUpPage());
                         },backgrounColor:white)

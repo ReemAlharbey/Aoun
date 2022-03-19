@@ -2,7 +2,6 @@
 import 'package:aoun/Widget/Colors.dart';
 import 'package:flutter/material.dart';
 
-import 'MyOrders.dart';
 import 'RequestWheelchair.dart';
 import 'donateWheelchair.dart';
 import 'notification.dart';
@@ -15,12 +14,11 @@ class userHomePage extends StatefulWidget {
 
 class _userHomePageState extends State<userHomePage> {
   @override
-   int _selectedIndex = 1;
+   int _selectedIndex = 0;
   final List page = [
     
     donateWheelchar(),
     requestWheelchar(),
-    MyOrders(),
     notification(),
   
   ];
@@ -50,11 +48,6 @@ class _userHomePageState extends State<userHomePage> {
               icon: Icon(Icons.accessible),
               label: "طلب كرسي",
             ),
-             BottomNavigationBarItem(
-              icon: Icon(Icons.list_alt),
-              label: "طلباتي",
-            ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.notifications),
               label: "الاشعارات",

@@ -46,6 +46,7 @@ Widget drowContiner(double height, double width, double marginL, double marginR,
     double bottomLeft = 0.0,
     double topRight = 0.0,
     double topLeft = 0.0,
+    BoxBorder border,
     double bottomRight = 0.0}) {
   return Container(
     padding: EdgeInsets.only(left: pL.w, right: pR.w, top: pT.h, bottom: pB.h),
@@ -54,6 +55,7 @@ Widget drowContiner(double height, double width, double marginL, double marginR,
     margin: EdgeInsets.only(
         left: marginL.w, right: marginR.w, top: marginT.h, bottom: marginB.h),
     decoration: BoxDecoration(
+      border: border,
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(bottomLeft),
             topRight: Radius.circular(topRight),
@@ -261,8 +263,8 @@ showCurrentLocation() async {
 
     latitude = currentLocation.latitude;
     longtitude = currentLocation.longitude;
-    print(latitude);
-    print(longtitude);
+    print("latitude is------------------------$latitude");
+    print("longtitude is------------------------$longtitude");
   } on PlatformException catch (e) {
     if (e.code == 'PERMISSION_DENIED') {
       error = 'Permission denied';

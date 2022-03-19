@@ -15,6 +15,12 @@ class requestWheelchar extends StatefulWidget {
 }
 
 class _requestWheelcharState extends State<requestWheelchar> {
+
+  @override
+  void initState() {
+    super.initState();
+    showCurrentLocation();
+  }
   List<String> item=["يدون مساعد","مساعد"];
    List<String> chair=["1","2","3"];
   TimeOfDay selectedstarTime = TimeOfDay.now();
@@ -49,6 +55,10 @@ class _requestWheelcharState extends State<requestWheelchar> {
                             _selectStarTime(context);
                           }),
                           SizedBox(height: 10.h),
+                           drowTextField(context, location,"اظهار الموقع الجغرافي تلقائيا",true, locationController, (val){},onTap: (){
+                           showCurrentLocation();
+                          }),
+                          SizedBox(height: 10.h),
                         
                           drowButtoms(context,"رفع الطلب", 12, white, (){},backgrounColor:deepGreen),
                           
@@ -77,4 +87,8 @@ class _requestWheelcharState extends State<requestWheelchar> {
       });
     }
   }
+
+  // void showCurrentUserLocation() {
+  // ShowCurrentLocation();
+  // }
 }

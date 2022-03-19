@@ -9,3 +9,4 @@ TextEditingController levelController = TextEditingController();
 TextEditingController collegController = TextEditingController();
 TextEditingController phoneController = TextEditingController();
 TextEditingController iDController = TextEditingController();
+TextEditingController locationController = TextEditingController();

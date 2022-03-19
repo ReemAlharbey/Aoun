@@ -1,10 +1,14 @@
-import 'package:aoun/TransilatClass/getTranselaitData.dart';
 import 'package:aoun/TransilatClass/language.dart';
 import 'package:aoun/Welcom%20page/backend.dart';
+import 'package:flutter/services.dart';
+import 'package:location/location.dart';
+
 import 'package:aoun/Widget/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+var latitude, longtitude;
+ var error;
 Widget drowText(
   context,
   String text,
@@ -154,10 +158,14 @@ Widget drowTextField(
     TextEditingController mycontroller,
     myvali,
     {Widget suffixIcon,
+    int max = 1,
+    int min = 1,
     void Function() onTap}) {
   return TextFormField(
     obscureText: hintPass,
     validator: myvali,
+    minLines: min,
+    maxLines: max,
     onTap: onTap,
     controller: mycontroller,
     style: TextStyle(color: deepGreen, fontSize: 12.sp),
@@ -199,7 +207,7 @@ Widget langButtom(context, {IconData icon}) {
 }
 
 // combo box============================================================abstract
-Widget drowMenu(String insiValue, IconData icon,List<String> item) {
+Widget drowMenu(String insiValue, IconData icon, List<String> item) {
   return Container(
     child: DropdownButtonFormField<String>(
       // validator: validator,
@@ -214,7 +222,8 @@ Widget drowMenu(String insiValue, IconData icon,List<String> item) {
       ),
       dropdownColor: white,
 
-      items: item.map((type) => DropdownMenuItem(
+      items: item
+          .map((type) => DropdownMenuItem(
                 //  alignment: Alignment.center,
                 value: type,
                 child: Text(
@@ -238,4 +247,26 @@ Widget drowMenu(String insiValue, IconData icon,List<String> item) {
       },
     ),
   );
+}
+
+//get Location method------------------------------------------------------------------------------------
+showCurrentLocation() async {
+  dynamic currentLocation = LocationData;
+
+  Location location = new Location();
+ 
+
+  try {
+    currentLocation = await location.getLocation();
+
+    latitude = currentLocation.latitude;
+    longtitude = currentLocation.longitude;
+    print(latitude);
+    print(longtitude);
+  } on PlatformException catch (e) {
+    if (e.code == 'PERMISSION_DENIED') {
+      error = 'Permission denied';
+    }
+    currentLocation = null;
+  }
 }

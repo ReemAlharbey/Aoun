@@ -5,15 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'TransilatClass/getTranselaitData.dart';
 import 'TransilatClass/setLocale.dart';
 import 'Welcom page/frontend.dart';
-
+import 'home/userHomePage/userHomePage.dart';
 
 void main() => runApp(
       DevicePreview(
         enabled: true,
-        builder: (context) =>  MyApp(), // Wrap your app
+        builder: (context) => MyApp(), // Wrap your app
       ),
     );
-
 
 class MyApp extends StatefulWidget {
   static void setLocale(BuildContext context, Locale locale) {
@@ -95,11 +94,7 @@ class _MyAppState extends State<MyApp> {
         },
         debugShowCheckedModeBanner: false,
         //اظهار الشاشه الولي وفقا لحاله المستخدم, هل قام بالتسجيل مسلقا ام اول مره يظهر التطبيق
-        home:
-      // _local == null ?
-       WelcomePage()
-         // :
-         //(),
+        home: _local == null ? WelcomePage() : userHomePage(),
       ),
     );
   }

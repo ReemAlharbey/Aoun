@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   device_preview:
   flutter_screenutil:
+  location: ^2.3.5
+  geocoding:
   flutter_localizations: 
     sdk: flutter
 

@@ -2,6 +2,7 @@
 import 'package:aoun/Widget/Colors.dart';
 import 'package:flutter/material.dart';
 
+import 'MyOrders.dart';
 import 'RequestWheelchair.dart';
 import 'donateWheelchair.dart';
 import 'notification.dart';
@@ -19,6 +20,7 @@ class _userHomePageState extends State<userHomePage> {
     
     donateWheelchar(),
     requestWheelchar(),
+    MyOrders(),
     notification(),
   
   ];
@@ -47,6 +49,10 @@ class _userHomePageState extends State<userHomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.accessible),
               label: "طلب كرسي",
+            ),
+             BottomNavigationBarItem(
+              icon: Icon(Icons.list_alt),
+              label: "طلباتي",
             ),
 
             BottomNavigationBarItem(

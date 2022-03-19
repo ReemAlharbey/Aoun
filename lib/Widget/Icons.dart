@@ -9,6 +9,7 @@ IconData emailIcon=Icons.email_rounded;
 IconData phoneIcon=Icons.call;
 IconData starTime=Icons.timer;
 IconData endTime=Icons.timer_off_outlined;
+IconData location=Icons.location_history;
 IconData collegIcon=Icons.location_city_rounded;
 IconData levelIcon=Icons.reduce_capacity_rounded;
 IconData notificationsIcon=Icons.notifications;

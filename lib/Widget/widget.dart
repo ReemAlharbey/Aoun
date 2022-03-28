@@ -162,6 +162,7 @@ Widget drowTextField(
     {Widget suffixIcon,
     int max = 1,
     int min = 1,
+    inputFormatters,keyboardType,
     void Function() onTap}) {
   return TextFormField(
     obscureText: hintPass,
@@ -170,6 +171,9 @@ Widget drowTextField(
     maxLines: max,
     onTap: onTap,
     controller: mycontroller,
+      inputFormatters: inputFormatters,
+      keyboardType: keyboardType,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
     style: TextStyle(color: deepGreen, fontSize: 12.sp),
     decoration: InputDecoration(
         isDense: true,

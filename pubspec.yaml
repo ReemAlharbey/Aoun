@@ -27,6 +27,10 @@ dependencies:
   flutter_screenutil:
   location: ^2.3.5
   geocoding:
+  firebase_core: 
+  firebase_auth: 
+  cloud_firestore:
+  email_validator: ^2.0.1
   flutter_localizations: 
     sdk: flutter
 

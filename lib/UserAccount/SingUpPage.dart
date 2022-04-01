@@ -151,7 +151,7 @@ class _SingUpPageState extends State<SingUpPage> {
         //يتم اضافه المستخدم الي قاعده البيانات
         awesomDialog(context,'Create an account', 'wating');
 
-        var userCredential =
+        UserCredential userCredential =
             await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email.trim(),
           password: pass,
@@ -216,7 +216,7 @@ class _SingUpPageState extends State<SingUpPage> {
             "Invalid password",
             e.toString(),
           );
-        print(e);
+        print("==================================$e");
       }
 
 
